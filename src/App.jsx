@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 import menuItems from './menuItems';
-import SearchBar from "./SearchBar";
+import SearchBar from './SearchBar.jsx';
+import { BellDot, MessageSquareMore, UserPen, ChevronDown } from 'lucide-react';
+
 
 function App() {
   const [search, setSearch] = useState("");
@@ -36,11 +38,20 @@ function App() {
 
       {/* Main Content */}
       <div className="flex-1 p-6 ml-8 ">
+
         <SearchBar
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search"
         />
+        
+        <div className="flex items-center justify-between w-48 ml-auto">
+          <BellDot className="text-gray-400" size={25} />
+          <MessageSquareMore className="text-gray-400" size={25} />
+          <UserPen className="text-gray-400" size={25} />
+          <ChevronDown className="text-gray-400" size={25} />
+        </div>
+
         <div class="border-t-2 mb-7 border-gray-300 border-1.4 -mt-4 w-full"></div>
         <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
         <div className="grid grid-cols-5 gap-5">
