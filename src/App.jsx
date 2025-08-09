@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import menuItems from './menuItems';
 import SearchBar from './SearchBar.jsx';
+import MyChart from './MyChart.jsx';
 import { BellDot, MessageSquareMore, UserPen, ChevronDown } from 'lucide-react';
 
 
@@ -38,24 +39,27 @@ function App() {
 
       {/* Main Content */}
       <div className="flex-1 p-6 ml-8 ">
+        {/* Search + Icons container */}
+        <div className="flex items-center justify-between mb-6">
+          <SearchBar
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search"
+            className="flex-1 outline-none bg-transparent"
+          />
 
-        <SearchBar
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search"
-        />
-        
-        <div className="flex items-center justify-between w-48 ml-auto">
-          <BellDot className="text-gray-400" size={25} />
-          <MessageSquareMore className="text-gray-400" size={25} />
-          <UserPen className="text-gray-400" size={25} />
-          <ChevronDown className="text-gray-400" size={25} />
+          <div className="flex items-center -mt-6 space-x-6 ml-6">
+            <BellDot className="text-gray-400" size={25} />
+            <MessageSquareMore className="text-gray-400" size={25} />
+            <UserPen className="text-gray-400" size={25} />
+            <ChevronDown className="text-gray-400" size={25} />
+          </div>
         </div>
 
         <div class="border-t-2 mb-7 border-gray-300 border-1.4 -mt-4 w-full"></div>
         <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
         <div className="grid grid-cols-5 gap-5">
-          <div className="bg-white p-5 rounded-2xl shadow">
+          <div className="bg-white p-4 rounded-2xl shadow">
             <p className="text-lg font-bold mb-2">Available Position</p>
             <p className="text-3xl text-black mb-2">24</p>
             <p className="text-sm text-red-500">4 Urgently needed</p>
@@ -81,8 +85,11 @@ function App() {
             <p className="text-sm text-teal-400">4 Department</p>
           </div>
         </div>
+        <div className="w-169 h-74 bg-white mt-7 pl-4 pb-2 rounded-lg">
+          <MyChart />
+        </div>
       </div>
-    </div>
+    </div >
   );
 }
 
