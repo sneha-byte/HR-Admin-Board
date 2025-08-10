@@ -25,11 +25,11 @@ ChartJS.register(
 function MyChart() {
     const data = {
         // x-axis labels
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July"],
         datasets: [
             {
                 label: "Revenue",
-                data: [10, 25, 40, 30, 50],
+                data: [10, 25, 40, 30, 50, 60, 70],
                 borderColor: "rgb(75, 192, 192)",
                 backgroundColor: "white",
                 tension: 0.4,                // Curviness of the line 
@@ -81,10 +81,10 @@ function MyChart() {
             y: {
                 grid: {
                     display: true,
-                    color: "#eee"
+                    color: "#eee",
                 },
                 ticks: {
-                    color: "#666"
+                    color: "#666",
                 }
             }
         },
